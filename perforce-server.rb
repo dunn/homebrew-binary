@@ -1,21 +1,21 @@
 class PerforceServer < Formula
   desc "Server for the Perforce revision control system"
   homepage "http://www.perforce.com/"
-  version "2016.1.1374211"
+  version "2016.1.1396108"
 
   if MacOS.prefer_64_bit?
     url "http://filehost.perforce.com/perforce/r16.1/bin.darwin90x86_64/p4d"
-    sha256 "4497db298796239ca2f1991bcb5103b36889a769dbf997e9fa9a1782ca34ff36"
+    sha256 "d2a4a6f071161813feea84db581f2fedea19d15f660770c2847cbd54803dd392"
   else
     url "http://filehost.perforce.com/perforce/r16.1/bin.darwin90x86/p4d"
-    sha256 "9891c0e73646b399d6bfc74c8cf6ed6e1180062392c708609683f2162f0ddfed"
+    sha256 "c4f3d6ff56ea87dbddde5b081919930416a438a76f6191ac4b384747b50f0409"
   end
 
   bottle :unneeded
 
   def install
     bin.install "p4d"
-    (var+"p4root").mkpath
+    (var/"p4root").mkpath
   end
 
   plist_options :startup => true
